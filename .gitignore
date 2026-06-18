@@ -1,0 +1,17 @@
+.env
+
+logs/
+
+__pycache__/
+
+*.pyc
+
+*.log
+
+config/google-service-account.json
+
+.vscode/
+
+.idea/
+
+.pytest_cache/

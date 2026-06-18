@@ -1,21 +1,39 @@
-name: Birthday Wishes
+name: Birthday Automation
 
 on:
-  schedule:
-    - cron: '30 2 * * *'
+
   workflow_dispatch:
 
+  schedule:
+
+    - cron: "30 2 * * *"
+
 jobs:
-  run:
+
+  birthday:
+
     runs-on: ubuntu-latest
+
     steps:
+
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
+
         with:
-          python-version: '3.12'
+
+          python-version: "3.12"
+
       - run: pip install -r requirements.txt
-      - run: python birthdays.py
+
+      - run: python app/main.py
+
         env:
-          SHEET_ID: ${{ secrets.SHEET_ID }}
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-          WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
+
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+
+          GOOGLE_SERVICE_ACCOUNT: service.json
+
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

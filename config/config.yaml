@@ -1,0 +1,35 @@
+application:
+
+  name: Birthday Automation
+
+  timezone: Asia/Kolkata
+
+  scheduler:
+
+    enabled: true
+
+    run_time: "08:00"
+
+birthday:
+
+  date_format: "%d-%m"
+
+  check_today_only: true
+
+logging:
+
+  save_logs: true
+
+  folder: logs/
+
+templates:
+
+  random: true
+
+  emoji: true
+
+retry:
+
+  attempts: 3
+
+  wait_seconds: 5

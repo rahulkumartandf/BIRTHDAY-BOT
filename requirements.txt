@@ -1,3 +1,10 @@
 gspread
 google-auth
+python-dotenv
+PyYAML
 requests
+jinja2
+pandas
+tenacity
+loguru
+schedule
